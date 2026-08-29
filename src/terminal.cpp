@@ -6,9 +6,11 @@
 #define WIN32_LEAN_AND_CLEAN
 #define VC_EXTRALEAN
 #include <Windows.h>
+#include <canio.h>
 #elif defined(__linux__)
 #include <sys/ioctl.h>
 #include <unistd.h>
+#include <termios.h>
 #endif
 
 /**

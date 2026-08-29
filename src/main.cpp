@@ -2,6 +2,8 @@
 #include "header/terminal.h"
 #include "header/tic_tac_toe.h"
 #include <string>
+#include <unistd.h>
+#include <termios.h>
 #include <print>
 
 int main()
@@ -26,6 +28,7 @@ int main()
 
         int row;
         int col;
+        std::print("\nPlayer {} turn\n", board.currentPlayer);
         std::print("Enter row you want to move in: ");
         std::cin >> row;
         std::print("Enter col you want to move in: ");
@@ -34,6 +37,8 @@ int main()
 
         if (board.Table[row][col] == 'X' || board.Table[row][col] == '0')
         {
+            std::cout << "Invalid move try again";
+            continue;
         }
 
         // plays the move and switch the current player
@@ -63,6 +68,8 @@ int main()
     }
 
     std::string garbage;
+
+    // implement exit on any key press
     std::cout << "Press any key to exit: ";
     std::cin >> garbage;
     TerminalControl::main_window();

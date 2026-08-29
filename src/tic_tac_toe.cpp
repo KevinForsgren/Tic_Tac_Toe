@@ -9,6 +9,9 @@
 Tic_Tac_Toe::Tic_Tac_Toe()
 = default;
 
+/**
+ * Print the Game board
+ */
 void Tic_Tac_Toe::printBoard() const
 {
 
@@ -32,6 +35,10 @@ void Tic_Tac_Toe::printBoard() const
     }
 }
 
+/**
+ * Check for the winner by comparing each row and column cells
+ * @return bool
+ */
 bool Tic_Tac_Toe::check_winner() const
 {
 
@@ -73,6 +80,10 @@ bool Tic_Tac_Toe::check_winner() const
     return false;
 }
 
+/**
+ * Check if board is fulled and then return true if does
+ * @return bool
+ */
 bool Tic_Tac_Toe::check_draw() const
 {
 
