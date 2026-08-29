@@ -8,4 +8,5 @@ add_executable(Tic_Tac_Toe src/main.cpp
         src/header/terminal.h
         src/tic_tac_toe.cpp
         src/header/tic_tac_toe.h
+        src/main.cpp
 )

@@ -35,6 +35,12 @@ std::string TerminalControl::tc_background(const int R, const int G, const int B
     return "\033[48;2;" + std::to_string(R) + ";" + std::to_string(G) + ";" + std::to_string(B) + "m";
 }
 
+/**
+ * Get the current size of the terminal
+ * @param row update the row with the terminal current max row
+ * @param col update the column with the terminal current max column
+ * @return void
+ */
 void TerminalControl::get_terminal_size(int* row, int* col)
 {
     #if defined(_WIN32)
@@ -56,8 +62,8 @@ void TerminalControl::get_terminal_size(int* row, int* col)
 
 /**
  * move cursor to the specific location in the terminal
- * @param X x-axis
- * @param Y y-axis
+ * @param X row
+ * @param Y column
  * @return void
  */
 void TerminalControl::move_cursor(const int X, const int Y)
