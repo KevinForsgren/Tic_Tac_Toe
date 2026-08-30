@@ -2,8 +2,6 @@
 #include "header/terminal.h"
 #include "header/tic_tac_toe.h"
 #include <string>
-#include <unistd.h>
-#include <termios.h>
 #include <print>
 
 int main()
@@ -13,66 +11,74 @@ int main()
     TerminalControl::hide_cursor();
     Tic_Tac_Toe board;
 
+    std::string Winner;
+
     while (true)
     {
         TerminalControl::clear_terminal();
         TerminalControl::move_cursor(2,1);
         board.printBoard();
 
-        /*int grid;
+        int grid;
 
-        std::cout << "Enter the cell no to move in That cell";
+        std::cout << "\nEnter the cell no to move in That cell\n";
         std::print("Player {}: ", board.currentPlayer);
-        std::cin >> grid;*/
+        std::cin >> grid;
+        std::cout << std::endl;
 
 
-        int row;
-        int col;
-        std::print("\nPlayer {} turn\n", board.currentPlayer);
-        std::print("Enter row you want to move in: ");
-        std::cin >> row;
-        std::print("Enter col you want to move in: ");
-        std::cin >> col;
-
-
-        if (board.Table[row][col] == 'X' || board.Table[row][col] == '0')
+        for (const auto& [id, row, col] : board.cells)
         {
-            std::cout << "Invalid move try again";
-            continue;
-        }
+            if (id == grid)
+            {
+                // check if player already moved here
+                if (board.Table[row][col] == 'X' || board.Table[row][col] == 'O')
+                {
+                    break;
+                }
 
-        // plays the move and switch the current player
-        if (board.currentPlayer == 1)
-        {
-            board.Table[row][col] = 'X';
-            board.currentPlayer = 2;
-        }
-        else
-        {
-            board.Table[row][col] = 'O';
-            board.currentPlayer = 1;
+                if (board.currentPlayer == 1)
+                {
+                    board.Table[row][col] = 'X';
+                    board.currentPlayer = 2;
+                    break;
+                }
+
+                board.Table[row][col] = 'O';
+                board.currentPlayer = 1;
+                break;
+            }
+
+
         }
 
         // implement check winner below
+        // if anything except \0 then this block will execute
         if (board.check_winner())
         {
+            Winner = board.check_winner();
             break;
         }
 
         // checks if draw happen
         if (board.check_draw())
         {
-            std::cout << "Game is Draw no one wins\n";
+            Winner = "Draw";
             break;
         }
+
     }
 
-    std::string garbage;
-
-    // implement exit on any key press
-    std::cout << "Press any key to exit: ";
-    std::cin >> garbage;
     TerminalControl::main_window();
+    TerminalControl::show_cursor();
+    if (Winner == "Draw")
+    {
+        std::cout << TerminalControl::tc_color(0, 255, 0) << "Draw || No one wins " << Winner << TerminalControl::tc_color(255, 255, 255) << std::endl;
+    }
+    else
+    {
+        std::cout << TerminalControl::tc_color(0, 255, 0) << "Winner is " << Winner << TerminalControl::tc_color(255, 255, 255) << std::endl;
+    }
 
     return 0;
 }

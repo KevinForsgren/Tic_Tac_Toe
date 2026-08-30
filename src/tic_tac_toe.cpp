@@ -39,7 +39,7 @@ void Tic_Tac_Toe::printBoard() const
  * Check for the winner by comparing each row and column cells
  * @return bool
  */
-bool Tic_Tac_Toe::check_winner() const
+char Tic_Tac_Toe::check_winner() const
 {
 
 
@@ -48,8 +48,7 @@ bool Tic_Tac_Toe::check_winner() const
     {
         if (row[0] == row[1] && row[1] == row[2])
         {
-            std::print("Winner is {}\n", row[0]);
-            return true;
+            return row[0];
         }
     }
 
@@ -58,26 +57,24 @@ bool Tic_Tac_Toe::check_winner() const
     {
         if (Table[0][col] == Table[1][col] && Table[1][col] == Table[2][col])
         {
-            std::print("Winner is {}\n", Table[0][col]);
-            return true;
+            return Table[0][col];
         }
     }
 
     // checking diagonally
     if (Table[0][0] == Table[1][1] && Table[1][1] == Table[2][2])
     {
-        std::print("Winner is {}\n", Table[1][1]);
-        return true;
+        return Table[0][0];
     }
 
     // checking diagonally
     if (Table[0][2] == Table[1][1] && Table[1][1] == Table[2][0])
     {
-        std::print("Winner is {}\n", Table[1][1]);
-        return true;
+        return Table[1][1];
     }
 
-    return false;
+    // returning false as NUL is 0;
+    return '\0';
 }
 
 /**
@@ -91,7 +88,7 @@ bool Tic_Tac_Toe::check_draw() const
     {
         for (const char cell : row)
         {
-            if (cell != 'X' || cell != 'O')
+            if (cell != 'X' && cell != 'O')
             {
                 return false;
             }
