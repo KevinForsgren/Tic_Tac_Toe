@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/kevin/CLionProjects/Tic_Tac_Toe/build",
+  "command": "/usr/bin/g++ -g -std=gnu++23 -fmodules-ts -fmodule-mapper=CMakeFiles/Tic_Tac_Toe.dir/src/main.cpp.o.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles/Tic_Tac_Toe.dir/src/main.cpp.o -c /home/kevin/CLionProjects/Tic_Tac_Toe/src/main.cpp",
+  "file": "/home/kevin/CLionProjects/Tic_Tac_Toe/src/main.cpp",
+  "output": "/home/kevin/CLionProjects/Tic_Tac_Toe/build/CMakeFiles/Tic_Tac_Toe.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/kevin/CLionProjects/Tic_Tac_Toe/build",
+  "command": "/usr/bin/g++ -g -std=gnu++23 -fmodules-ts -fmodule-mapper=CMakeFiles/Tic_Tac_Toe.dir/src/terminal.cpp.o.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles/Tic_Tac_Toe.dir/src/terminal.cpp.o -c /home/kevin/CLionProjects/Tic_Tac_Toe/src/terminal.cpp",
+  "file": "/home/kevin/CLionProjects/Tic_Tac_Toe/src/terminal.cpp",
+  "output": "/home/kevin/CLionProjects/Tic_Tac_Toe/build/CMakeFiles/Tic_Tac_Toe.dir/src/terminal.cpp.o"
+},
+{
+  "directory": "/home/kevin/CLionProjects/Tic_Tac_Toe/build",
+  "command": "/usr/bin/g++ -g -std=gnu++23 -fmodules-ts -fmodule-mapper=CMakeFiles/Tic_Tac_Toe.dir/src/tic_tac_toe.cpp.o.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles/Tic_Tac_Toe.dir/src/tic_tac_toe.cpp.o -c /home/kevin/CLionProjects/Tic_Tac_Toe/src/tic_tac_toe.cpp",
+  "file": "/home/kevin/CLionProjects/Tic_Tac_Toe/src/tic_tac_toe.cpp",
+  "output": "/home/kevin/CLionProjects/Tic_Tac_Toe/build/CMakeFiles/Tic_Tac_Toe.dir/src/tic_tac_toe.cpp.o"
+}
+]

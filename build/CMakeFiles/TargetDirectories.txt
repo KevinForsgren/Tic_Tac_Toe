@@ -1,0 +1,3 @@
+/home/kevin/CLionProjects/Tic_Tac_Toe/build/CMakeFiles/Tic_Tac_Toe.dir
+/home/kevin/CLionProjects/Tic_Tac_Toe/build/CMakeFiles/edit_cache.dir
+/home/kevin/CLionProjects/Tic_Tac_Toe/build/CMakeFiles/rebuild_cache.dir
