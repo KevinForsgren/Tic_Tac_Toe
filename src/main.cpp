@@ -73,7 +73,7 @@ int main()
     TerminalControl::show_cursor();
     if (Winner == "Draw")
     {
-        std::cout << TerminalControl::tc_color(0, 255, 0) << "Draw || No one wins " << Winner << TerminalControl::tc_color(255, 255, 255) << std::endl;
+        std::cout << TerminalControl::tc_color(255, 0, 0) << "Draw || No one wins " << Winner << TerminalControl::tc_color(255, 255, 255) << std::endl;
     }
     else
     {
